@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-family: "DM Sans", sans-serif;
+    --purple-500: #7650dc;
+    --purple-100: #dacffc;
+    --white: #ffffff;
+    --yellow-500: #ffcb6b;
+    --yellow-100: #f9eee1;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #edecf1;
+}
+
+.bento-grid {
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    grid-template-areas:
+    'item1'
+    'item2'
+    'item3'
+    'item4'
+    'item5'
+    'item6'
+    'item7'
+    'item8';
+}
+
+.item {
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.item:first-child {
+    background-color: var(--purple-500);
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: item1;
+
+}
+
+.item:first-child h2 {
+    color: var(--white);
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 35px;
+}
+
+.special {
+    color: var(--yellow-500);
+}
+
+.item:first-child p {
+    color: var(--yellow-100);
+    text-align: center;
+}
+
+.item:first-child img {
+    margin-top: 1.5rem;
+    height: 30%;
+    width: 100%;
+}
+
+.item:nth-child(2) {
+    flex-direction: column;
+    background-color: var(--white);
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    grid-area: item2;
+}
+
+
+.item:nth-child(2) h2, .item:nth-child(3) h2 {
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 20px;
+}
+
+.item:nth-child(2) img {
+    width: 100%;
+    height: 30%;
+}
+
+.item:nth-child(3) {
+    flex-direction: column;
+    background-color: var(--yellow-500);
+    padding: 1rem 1rem 0 1rem;
+    grid-area: item3;
+}
+
+.item:nth-child(3) h2 {
+    padding-bottom: 1rem;
+}
+
+.item:nth-child(3) img {
+    height: 60%;
+    width: 60%;
+}
+
+.item:nth-child(4) {
+    background-color: var(--purple-100);
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+    text-align: center;
+    grid-area: item4;
+}
+
+.item:nth-child(4) h2 {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.item:nth-child(4) img {
+    width: 100%;
+    height: 50%;
+    align-self: center;
+}
+
+.item:nth-child(5) {
+    background-color: var(--purple-500);
+    padding: 1rem 2.5rem;
+    flex-direction: column;
+    text-align: center;
+    grid-area: item5;
+}
+
+.item:nth-child(5) img {
+    width: 80%;
+    height: 90%;
+}
+
+.item:nth-child(5) h2 {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+
+.item:nth-child(6) {
+    background-color: var(--white);
+    padding: 1rem;
+    flex-direction: column;
+    grid-area: item6;
+}
+
+.item:nth-child(6) h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+
+}
+
+.item:nth-child(6) p {
+    font-weight: 400;
+}
+
+.item:nth-child(6) img {
+    width: 50%;
+    height: 50%;
+    margin-top: 1rem;
+}
+
+.item:nth-child(7) {
+    background-color: var(--yellow-100);
+    padding: 1.5rem;
+    flex-direction: column;
+    grid-area: item7;
+
+}
+
+.item:nth-child(7) h2 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.item:nth-child(7) img {
+    width: 60%;
+    height: 60%;
+    margin-top: 1rem;
+}
+
+.item:last-child {
+    flex-direction: column;
+    background-color: var(--yellow-500);
+    padding: 1rem;
+    grid-area: item8;
+}
+
+.item:last-child h2 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.item:last-child img {
+    width: 60%;
+    height: 60%;
+    margin-top: 1rem;
+}
+
+
+
+@media (min-width: 1000px) {
+    body {
+      background-color: lightgray;
+    }
+
+    .bento-grid {
+        width: min(95%, 70rem);
+        /* margin-inline: auto; */
+        grid-auto-columns: 1fr;
+        grid-template-areas:
+        'item7 item1 item1 item4'
+        'item7 item1 item1 item4'
+        'item7 item2 item3 item4'
+        'item8 item2 item3 item4'
+        'item8 item6 item5 item5'
+        'item8 item6 item5 item5';
+    }
+
+    .item:nth-child(5) {
+        padding: 1rem;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    .item:nth-child(5) h2 {
+        margin-top: 0;
+    }
+
+
+}
+
